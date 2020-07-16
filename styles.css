@@ -1,0 +1,121 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.portrait {
+grid-area: portrait;
+width:inherit;
+}
+
+/* The grid container */
+.intro-container {
+  display: grid;
+  grid-template-areas:
+    'intro portrait';
+  grid-template-columns: 1fr 900px;
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+}
+
+/* used for Name and Experience title */
+.intro {
+  text-align: center;
+  grid-area: intro;
+  background-color: black;
+  padding: 30px;
+  font-size: 35px;
+  color: #f1f1f1;
+}
+.intro-ul{
+  padding-left: 0;
+  width:100%;
+  text-align:center;
+  list-style-type: none;
+}
+.intro-li{
+  text-align: inherit;
+  line-height: 200%;
+  font-size: 20px;
+  font-family: 'Noto Sans SC', sans-serif;
+  color: #f1f1f1;
+}
+
+.name {
+  color: #f1f1f1;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+/* Style the header */
+.header {
+  font-family: 'Noto Sans SC', sans-serif;
+  grid-area: header;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'left left middle middle right right'
+    'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+}
+
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+  background-color: #aaa;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+  background-color: #ccc;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+  background-color: #bbb;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 900px) {
+  .grid-container  {
+    grid-template-areas:
+      'header header header header header header'
+      'left left left left left left'
+      'middle middle middle middle middle middle'
+      'right right right right right right'
+      'footer footer footer footer footer footer';
+  }
+  /* The grid container */
+  .intro-container {
+    display: grid;
+    grid-template-areas:
+      'intro'
+      'portrait';
+  }
+}
